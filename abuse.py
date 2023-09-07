@@ -37,16 +37,22 @@ def fill_form(driver, faculty):
     # Click submit
     driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[3]/div[1]/div[1]/div/span").click()
 
-def abuse(driver, url):
+def abuse(url):
     try:
-        driver.get(URL)
         faculties_storage = MapStorage(MAP_PATH)
         faculties = faculties_storage.Read()
         valid_faculties = create_non_empty_list(faculties)
-        random_faculty = get_random_key(valid_faculties)
-        print(random_faculty)
-        fill_form(driver, random_faculty)
-        time.sleep(5)
+        while (len(valid_faculties) > 0):
+            driver = set_up_driver(DRIVER_PATH)
+            driver.get(URL)
+            start_time = random.uniform(0, PERIOD)
+            time.sleep(start_time * 60)
+            random_faculty = get_random_key(valid_faculties)
+            fill_form(driver, random_faculty)
+            time.sleep((PERIOD - start_time) * 60)
+            driver.close()
+
+
     except Exception as ex:
         print(ex)
     finally:
