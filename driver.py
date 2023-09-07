@@ -12,6 +12,7 @@ def set_up_driver(path_to_driver):
     options = webdriver.ChromeOptions()
     options.add_argument(f"user-agent={useragent.chrome}")
     options.add_argument("--disable-blink-features=AutomationControlled")
+    options.headless = True
 
     driver = webdriver.Chrome(
         executable_path=path_to_driver,
