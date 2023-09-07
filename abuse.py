@@ -6,11 +6,11 @@ import random
 
 # Create a list with keys whose value is not zero
 def create_non_empty_list(count):
-    return [key for key, value in count.items() if value != 0]
+    return [key for key, value in count.items() if value > 0]
 
-def get_random_key(keys):
-    random_key = random.choice(keys)
-    # TODO: add logic for reducing the value
+def get_random_key(faculties, valid_faculties):
+    random_key = random.choice(valid_faculties)
+    faculties[valid_faculties] -= 1
     return random_key
 
 def fill_form(driver, faculty):
@@ -47,7 +47,7 @@ def abuse(url):
             driver.get(URL)
             start_time = random.uniform(0, PERIOD)
             time.sleep(start_time * 60)
-            random_faculty = get_random_key(valid_faculties)
+            random_faculty = get_random_key(faculties, valid_faculties)
             fill_form(driver, random_faculty)
             time.sleep((PERIOD - start_time) * 60)
             driver.close()
