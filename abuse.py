@@ -33,6 +33,7 @@ def fill_form(driver, faculty):
     # Click benefits for students (random - yes or no)
     driver.find_element(By.XPATH, f"/html/body/div/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div/span/div/div[{random.choice([1, 2])}]").click()
     time.sleep(0.2)
+
     # Click submit
     driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[3]/div[1]/div[1]/div/span").click()
 
