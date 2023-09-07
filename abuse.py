@@ -39,12 +39,12 @@ def fill_form(driver, faculty):
 def abuse(driver, url):
     try:
         driver.get(URL)
-        map_storage = MapStorage(MAP_PATH)
-        count = map_storage.Read()
-        valid_keys = create_non_empty_list(count)
-        random_key = get_random_key(valid_keys)
-        print(random_key)
-        fill_form(driver, random_key)
+        faculties_storage = MapStorage(MAP_PATH)
+        faculties = faculties_storage.Read()
+        valid_faculties = create_non_empty_list(faculties)
+        random_faculty = get_random_key(valid_faculties)
+        print(random_faculty)
+        fill_form(driver, random_faculty)
         time.sleep(5)
     except Exception as ex:
         print(ex)
