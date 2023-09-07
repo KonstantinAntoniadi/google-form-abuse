@@ -9,9 +9,9 @@ def create_non_empty_list(count):
     return [key for key, value in count.items() if value > 0]
 
 def get_random_key(faculties, valid_faculties):
-    random_key = random.choice(valid_faculties)
-    faculties[valid_faculties] -= 1
-    return random_key
+    random_faculty = random.choice(valid_faculties)
+    faculties[random_faculty] -= 1
+    return random_faculty
 
 def fill_form(driver, faculty):
     # Click faculty
@@ -36,6 +36,8 @@ def fill_form(driver, faculty):
 
     # Click submit
     driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[3]/div[1]/div[1]/div/span").click()
+
+    print("The form is filled out")
 
 def abuse(url):
     try:
