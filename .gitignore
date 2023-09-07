@@ -1,1 +1,4 @@
 settings.py
+data.py
+count.pkl
+/__pycache__/
