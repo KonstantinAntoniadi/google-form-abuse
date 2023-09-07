@@ -50,6 +50,7 @@ def abuse(url):
             start_time = random.uniform(0, PERIOD)
             time.sleep(start_time * 60)
             random_faculty = get_random_key(faculties, valid_faculties)
+            faculties_storage.Write(faculties)
             fill_form(driver, random_faculty)
             time.sleep((PERIOD - start_time) * 60)
             driver.close()
