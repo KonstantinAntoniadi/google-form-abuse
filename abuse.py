@@ -16,19 +16,25 @@ def get_random_key(keys):
 def fill_form(driver, faculty):
     # Click faculty
     driver.find_element(By.XPATH, f"//*[contains(text(), '{faculty}')]").click()
+    time.sleep(0.2)
 
     # Click distant format (yes)
     driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[1]").click()
+    time.sleep(0.2)
 
     # Click Saturday work (no)
     driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div/span/div/div[2]").click()
+    time.sleep(0.2)
 
     # Click evening work (no)
     driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[2]/div[4]/div/div/div[2]/div/div/span/div/div[2]").click()
+    time.sleep(0.2)
 
     # Click benefits for students (random - yes or no)
     driver.find_element(By.XPATH, f"/html/body/div/div[2]/form/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div/span/div/div[{random.choice([1, 2])}]").click()
-
+    time.sleep(0.2)
+    # Click submit
+    driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[3]/div[1]/div[1]/div/span").click()
 
 def abuse(driver, url):
     try:
