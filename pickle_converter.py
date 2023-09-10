@@ -17,4 +17,4 @@ def read():
         print(f'{key}: {value}')
 
 # write()
-# read()
+read()
