@@ -1,5 +1,5 @@
 # Gogle form abuse script
-This example od script using for autofill google forms within a given time
+This example of script using for autofill google forms within a given time
 
 ## About
 The script runs until it fills in all the data from dict, which is stored in `MAP_PATH`.
